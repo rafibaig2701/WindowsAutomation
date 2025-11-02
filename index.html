@@ -6,186 +6,218 @@
   <title>Windows Automation by Rb</title>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-    * { margin:0; padding:0; box-sizing:border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family:'Poppins',sans-serif;
-      background:#fff;
-      color:#000;
-      overflow-x:hidden;
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffffff;
+      color: #000;
+      overflow-x: hidden;
     }
 
     /* ===== HEADER ===== */
-    header{
-      text-align:center;
-      padding:70px 15px 40px;
-      border-bottom:6px solid #facc15;
-      position:relative;
-      overflow:hidden;
+    header {
+      text-align: center;
+      padding: 80px 20px 50px;
+      border-bottom: 6px solid #facc15;
+      background: linear-gradient(180deg, #000 0%, #111 40%, #222 100%);
+      color: #fff;
+      position: relative;
     }
 
-    /* jumping letters */
-    .jump span{
-      display:inline-block;
-      font-size:2.8em;
-      font-weight:700;
-      color:#000;
-      border:4px solid #facc15;
-      background:#fff;
-      margin:2px;
-      padding:6px 8px;
-      border-radius:8px;
-      box-shadow:4px 4px 0 #000;
-      animation:jump 1s infinite;
-    }
-    .jump span:nth-child(odd){animation-delay:0.2s;}
-    .jump span:nth-child(even){animation-delay:0.4s;}
-
-    @keyframes jump{
-      0%,100%{transform:translateY(0);}
-      50%{transform:translateY(-10px);}
+    /* F1 Racer-style Title */
+    .title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3em;
+      color: #facc15;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      text-shadow: 0 0 20px #facc15, 0 0 40px #000;
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+      border-bottom: 4px solid #facc15;
+      animation: raceIn 2s ease-out;
     }
 
-    .author{
-      font-size:1.2em;
-      margin-top:15px;
-      color:#111;
-      font-weight:600;
+    @keyframes raceIn {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
+        letter-spacing: 20px;
+      }
+      60% {
+        transform: translateX(10%);
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(0);
+        letter-spacing: 4px;
+      }
     }
-    .highlight{color:#facc15;text-shadow:1px 1px #000;}
+
+    .author {
+      font-size: 1.2em;
+      margin-top: 20px;
+      color: #facc15;
+      font-weight: bold;
+      text-shadow: 1px 1px 2px #000;
+    }
 
     /* ===== CONTENT ===== */
-    .container{
-      max-width:1000px;
-      margin:50px auto;
-      background:#fff;
-      border:3px solid #000;
-      padding:40px;
-      border-radius:12px;
-      box-shadow:6px 6px 0 #facc15;
-      line-height:1.8;
+    .container {
+      max-width: 1000px;
+      margin: 50px auto;
+      background: #fff;
+      border: 3px solid #000;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 6px 6px 0 #facc15;
+      line-height: 1.8;
     }
 
-    h2{
-      background:#facc15;
-      color:#000;
-      border:2px solid #000;
-      border-radius:6px;
-      padding:8px 14px;
-      display:inline-block;
-      margin-bottom:15px;
-      font-size:1.4em;
+    h2 {
+      background: #facc15;
+      color: #000;
+      border: 2px solid #000;
+      border-radius: 6px;
+      padding: 8px 14px;
+      display: inline-block;
+      margin-bottom: 15px;
+      font-size: 1.4em;
     }
-    p{margin-bottom:20px;text-align:justify;font-size:1.1em;}
-    ul{margin:15px 0 25px 30px;}
-    li{margin-bottom:10px;}
-    img{
-      width:100%;
-      border:3px solid #000;
-      border-radius:10px;
-      box-shadow:5px 5px 0 #facc15;
-      margin:25px 0;
-      transition:transform .3s;
+
+    p {
+      margin-bottom: 20px;
+      text-align: justify;
+      font-size: 1.1em;
     }
-    img:hover{transform:scale(1.05);}
+
+    ul {
+      margin: 15px 0 25px 30px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    img {
+      width: 100%;
+      border: 3px solid #000;
+      border-radius: 10px;
+      box-shadow: 5px 5px 0 #facc15;
+      margin: 25px 0;
+      transition: transform 0.4s ease;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+    }
 
     /* ===== CAT WATCHING ===== */
-    .cat{
-      position:fixed;
-      bottom:-10px;
-      right:10px;
-      width:120px;
-      transition:transform .3s;
-      z-index:999;
+    .cat {
+      position: fixed;
+      bottom: 0;
+      right: 10px;
+      width: 130px;
+      z-index: 999;
+      transform-origin: center;
+      transition: transform 0.3s;
     }
-    .cat img{
-      width:100%;
-      border:none;
-      box-shadow:none;
-      animation:blink 4s infinite;
-    }
-    @keyframes blink{
-      0%,90%,100%{filter:brightness(1);}
-      95%{filter:brightness(0.6);}
+
+    .cat img {
+      width: 100%;
+      filter: drop-shadow(0 0 5px #000);
     }
 
     /* ===== FOOTER ===== */
-    footer{
-      text-align:center;
-      background:#facc15;
-      color:#000;
-      padding:20px;
-      font-weight:700;
-      border-top:4px solid #000;
-      letter-spacing:1px;
-      margin-top:40px;
+    footer {
+      text-align: center;
+      background: #facc15;
+      color: #000;
+      padding: 20px;
+      font-weight: 700;
+      border-top: 4px solid #000;
+      letter-spacing: 1px;
+      margin-top: 40px;
     }
 
-    /* smooth scroll effect for fun */
-    html{scroll-behavior:smooth;}
+    html {
+      scroll-behavior: smooth;
+    }
   </style>
 </head>
 
 <body>
   <header>
-    <div class="jump">
-      <span>W</span><span>I</span><span>N</span><span>D</span><span>O</span><span>W</span><span>S</span>
-      &nbsp;
-      <span>A</span><span>U</span><span>T</span><span>O</span><span>M</span><span>A</span><span>T</span><span>I</span><span>O</span><span>N</span>
-    </div>
-    <p class="author">Presented by <span class="highlight">Rb</span></p>
+    <div class="title">Windows Automation</div>
+    <p class="author">Presented by Rb</p>
   </header>
 
   <div class="container">
     <h2>About the Project</h2>
     <p>
-      <strong>Windows Automation by Rb</strong> transforms how we interact with computers.  
-      Using Python’s <span class="highlight">PyAutoGUI</span>, we automate tasks, control applications,
-      and let the system perform actions like a digital assistant.
+      <strong>Windows Automation by Rb</strong> brings speed and precision to everyday desktop operations.
+      This project uses <strong>Python’s PyAutoGUI</strong> library to simulate human actions — typing, clicking, dragging,
+      and capturing — but faster, consistent, and without human error.
     </p>
     <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Python.svg" alt="Python Logo">
 
     <h2>Why Automate?</h2>
-    <p>Automation means productivity and precision. Tasks like:</p>
+    <p>
+      Automation isn’t just about saving time — it’s about efficiency and consistency.  
+      From repetitive GUI tests to form filling, PyAutoGUI gives developers the ability
+      to make computers handle the boring stuff while you focus on the logic.
+    </p>
     <ul>
-      <li>Opening apps and navigating GUIs</li>
-      <li>Typing reports automatically</li>
-      <li>Running desktop tests</li>
-      <li>Creating screenshots and logs</li>
+      <li>Launch and control desktop apps automatically</li>
+      <li>Type and click at lightning speed</li>
+      <li>Take screenshots and recognize on-screen images</li>
+      <li>Run complex sequences without a single manual click</li>
     </ul>
 
-    <h2>How PyAutoGUI Helps</h2>
+    <h2>How PyAutoGUI Works</h2>
     <p>
-      PyAutoGUI interacts with mouse, keyboard, and screen pixels.  
-      With a few lines of code, you can move the cursor, click buttons, or type text.  
-      It’s a bridge between coding and the real screen you see.
+      PyAutoGUI bridges Python code with your computer screen:
     </p>
+    <ul>
+      <li><strong>moveTo(x, y)</strong> → Move your mouse to specific coordinates</li>
+      <li><strong>click()</strong> → Click anywhere on the screen</li>
+      <li><strong>typewrite('Hello')</strong> → Type text automatically</li>
+      <li><strong>screenshot()</strong> → Capture the screen instantly</li>
+    </ul>
     <img src="https://cdn.analyticsvidhya.com/wp-content/uploads/2021/05/pyautogui_image1.png" alt="Automation Example">
 
-    <h2>Fun Fact 🐱</h2>
+    <h2>Creative Future</h2>
     <p>
-      As you scroll, my little digital cat watches you from the corner.  
-      Because even automation deserves some adorable company!
+      Soon this project will include live demos, video tutorials, and advanced automation examples that interact
+      with Windows apps in real time — bringing the future of GUI automation to everyone.
     </p>
   </div>
 
   <!-- Cat watching -->
   <div class="cat" id="cat">
-    <img src="https://cdn.pixabay.com/photo/2017/01/31/17/44/cat-2022340_1280.png" alt="Watching Cat">
+    <img src="https://pngimg.com/uploads/cat/cat_PNG50452.png" alt="Watching Cat">
   </div>
 
   <footer>
-    © 2025 Windows Automation by Rb | Creative Web Design ✨ Yellow ⚡ Black 🐱
+    © 2025 Windows Automation by Rb | Fast ⚡ Smart 🏎️ Automated 🐱
   </footer>
 
   <script>
-    // Cat looks up when scrolling
+    // Cat slightly turns as user scrolls
     const cat = document.getElementById('cat');
     window.addEventListener('scroll', () => {
       const y = window.scrollY;
       const max = document.body.scrollHeight - window.innerHeight;
-      const rotate = (y / max) * 40 - 20; // tilt cat head
+      const rotate = (y / max) * 30 - 15;
       cat.style.transform = `rotate(${rotate}deg)`;
     });
   </script>
