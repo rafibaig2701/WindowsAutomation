@@ -6,8 +6,7 @@
   <title>Windows Automation by Rb</title>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600&display=swap');
 
     * {
       margin: 0;
@@ -25,7 +24,7 @@
     /* ===== HEADER ===== */
     header {
       text-align: center;
-      padding: 80px 20px 50px;
+      padding: 70px 20px 50px;
       border-bottom: 6px solid #facc15;
       background: linear-gradient(180deg, #000 0%, #111 40%, #222 100%);
       color: #fff;
@@ -35,26 +34,24 @@
     /* F1 Racer-style Title */
     .title {
       font-family: 'Orbitron', sans-serif;
-      font-size: 3em;
+      font-size: clamp(2em, 6vw, 3em);
       color: #facc15;
       text-transform: uppercase;
       letter-spacing: 4px;
-      text-shadow: 0 0 20px #facc15, 0 0 40px #000;
-      position: relative;
-      display: inline-block;
-      overflow: hidden;
+      text-shadow: 0 0 15px #facc15, 0 0 40px #000;
       border-bottom: 4px solid #facc15;
+      display: inline-block;
       animation: raceIn 2s ease-out;
     }
 
     @keyframes raceIn {
       0% {
-        transform: translateX(-100%);
+        transform: translateX(-120%);
         opacity: 0;
-        letter-spacing: 20px;
+        letter-spacing: 12px;
       }
       60% {
-        transform: translateX(10%);
+        transform: translateX(5%);
         opacity: 1;
       }
       100% {
@@ -125,17 +122,50 @@
     .cat {
       position: fixed;
       bottom: 0;
-      right: 10px;
-      width: 130px;
+      right: 15px;
+      width: 140px;
+      height: 120px;
       z-index: 999;
-      transform-origin: center;
-      transition: transform 0.3s;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
     }
 
-    .cat img {
-      width: 100%;
-      filter: drop-shadow(0 0 5px #000);
+    .cat-body {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      background: #facc15;
+      border: 3px solid #000;
+      border-radius: 50% 50% 20% 20%;
+      box-shadow: 3px 3px 0 #000;
     }
+
+    .eye {
+      position: absolute;
+      top: 35%;
+      width: 25px;
+      height: 25px;
+      background: #fff;
+      border: 2px solid #000;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .eye::after {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      width: 8px;
+      height: 8px;
+      background: #000;
+      border-radius: 50%;
+      transition: transform 0.2s;
+    }
+
+    .eye.left { left: 18px; }
+    .eye.right { right: 18px; }
 
     /* ===== FOOTER ===== */
     footer {
@@ -164,61 +194,93 @@
   <div class="container">
     <h2>About the Project</h2>
     <p>
-      <strong>Windows Automation by Rb</strong> brings speed and precision to everyday desktop operations.
-      This project uses <strong>Python’s PyAutoGUI</strong> library to simulate human actions — typing, clicking, dragging,
-      and capturing — but faster, consistent, and without human error.
+      <strong>Windows Automation by Rb</strong> is an innovative project that leverages Python’s <strong>PyAutoGUI</strong> library
+      to automate desktop applications on Windows. It demonstrates how code can interact with a user interface — moving
+      the mouse, typing, clicking buttons, and taking screenshots — just like a human would, but faster and more precisely.
     </p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Python.svg" alt="Python Logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python Logo">
 
     <h2>Why Automate?</h2>
     <p>
-      Automation isn’t just about saving time — it’s about efficiency and consistency.  
-      From repetitive GUI tests to form filling, PyAutoGUI gives developers the ability
-      to make computers handle the boring stuff while you focus on the logic.
+      Automation helps eliminate repetitive tasks and errors. It enhances productivity by letting computers handle what’s routine.
+      PyAutoGUI lets you control GUI elements with code, enabling:
     </p>
     <ul>
-      <li>Launch and control desktop apps automatically</li>
-      <li>Type and click at lightning speed</li>
-      <li>Take screenshots and recognize on-screen images</li>
-      <li>Run complex sequences without a single manual click</li>
+      <li>Automating repetitive desktop operations</li>
+      <li>Performing GUI testing without manual effort</li>
+      <li>Taking screenshots for verification</li>
+      <li>Controlling Windows applications automatically</li>
     </ul>
+    <img src="https://cdn.analyticsvidhya.com/wp-content/uploads/2021/05/pyautogui_image1.png" alt="PyAutoGUI Example">
 
     <h2>How PyAutoGUI Works</h2>
     <p>
-      PyAutoGUI bridges Python code with your computer screen:
+      PyAutoGUI provides methods like <code>moveTo()</code>, <code>click()</code>, <code>typewrite()</code>, and
+      <code>screenshot()</code> to mimic human actions. These tools help you automate GUI interactions and create
+      efficient, reliable workflows for testing or daily use.
     </p>
-    <ul>
-      <li><strong>moveTo(x, y)</strong> → Move your mouse to specific coordinates</li>
-      <li><strong>click()</strong> → Click anywhere on the screen</li>
-      <li><strong>typewrite('Hello')</strong> → Type text automatically</li>
-      <li><strong>screenshot()</strong> → Capture the screen instantly</li>
-    </ul>
-    <img src="https://cdn.analyticsvidhya.com/wp-content/uploads/2021/05/pyautogui_image1.png" alt="Automation Example">
 
-    <h2>Creative Future</h2>
+    <h2>Creative Vision</h2>
     <p>
-      Soon this project will include live demos, video tutorials, and advanced automation examples that interact
-      with Windows apps in real time — bringing the future of GUI automation to everyone.
+      This project will soon feature real-world examples, tutorials, and videos that showcase desktop automation in action.
+      The goal is to make Windows automation simple, engaging, and accessible to everyone.
     </p>
   </div>
 
-  <!-- Cat watching -->
-  <div class="cat" id="cat">
-    <img src="https://pngimg.com/uploads/cat/cat_PNG50452.png" alt="Watching Cat">
+  <!-- Animated Cat Watching -->
+  <div class="cat">
+    <div class="cat-body">
+      <div class="eye left"></div>
+      <div class="eye right"></div>
+    </div>
   </div>
 
   <footer>
-    © 2025 Windows Automation by Rb | Fast ⚡ Smart 🏎️ Automated 🐱
+    © 2025 Windows Automation by Rb | Fast ⚡ Smart 🏎️ Creative 🐱
   </footer>
 
   <script>
-    // Cat slightly turns as user scrolls
-    const cat = document.getElementById('cat');
+    // Cat eyes move up/down depending on scroll direction
+    let lastScroll = 0;
+    const eyes = document.querySelectorAll('.eye::after'); // Not directly selectable, so:
+    const leftEye = document.querySelector('.eye.left');
+    const rightEye = document.querySelector('.eye.right');
+
     window.addEventListener('scroll', () => {
-      const y = window.scrollY;
-      const max = document.body.scrollHeight - window.innerHeight;
-      const rotate = (y / max) * 30 - 15;
-      cat.style.transform = `rotate(${rotate}deg)`;
+      const currentScroll = window.scrollY;
+      const movingUp = currentScroll < lastScroll;
+
+      document.querySelectorAll('.eye').forEach(eye => {
+        const pupil = eye.querySelector('::after'); // Not accessible, workaround:
+      });
+
+      const pupils = document.querySelectorAll('.eye');
+      pupils.forEach(eye => {
+        const pupilDot = eye.querySelector('div');
+      });
+
+      const eyesPupil = document.querySelectorAll('.eye::after');
+      lastScroll = currentScroll;
+    });
+
+    // Real JS method for eye pupils:
+    const left = document.querySelector('.eye.left');
+    const right = document.querySelector('.eye.right');
+    let scrollPos = window.scrollY;
+
+    window.addEventListener('scroll', () => {
+      const newPos = window.scrollY;
+      const direction = newPos > scrollPos ? 'down' : 'up';
+      scrollPos = newPos;
+
+      const move = direction === 'down' ? 6 : -6;
+
+      document.querySelectorAll('.eye').forEach(eye => {
+        const pupil = eye.querySelector('::after');
+      });
+
+      // Move pupils manually
+      document.styleSheets[0].addRule('.eye::after', `transform: translateY(${move}px);`);
     });
   </script>
 </body>
