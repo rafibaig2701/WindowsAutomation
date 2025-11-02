@@ -3,154 +3,261 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Presented by RB - Windows Automation</title>
+  <title>Windows Automation by Rb</title>
+
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #ffffff;
-      color: #111;
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;600&display=swap');
+
+    * {
       margin: 0;
       padding: 0;
-      text-align: center;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff;
+      color: #000;
       overflow-x: hidden;
     }
+
+    /* ===== HEADER ===== */
     header {
-      background: #ffcc00;
-      color: #000;
-      padding: 25px 0;
-      border-bottom: 5px solid #000;
-      font-weight: 900;
-      font-size: 2em;
-      letter-spacing: 2px;
-      text-shadow: 2px 2px 0px #000;
+      text-align: center;
+      padding: 60px 20px 50px;
+      border-bottom: 6px solid #facc15;
+      background: linear-gradient(180deg, #000 0%, #111 40%, #222 100%);
+      color: #fff;
     }
-    .container {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 20px;
-    }
-    h2 {
-      background: #ffcc00;
+
+    /* Title (F1 Style) */
+    .title {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.8em, 8vw, 3.5em);
+      color: #facc15;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      text-shadow: 0 0 15px #facc15, 0 0 40px #000;
+      border-bottom: 4px solid #facc15;
       display: inline-block;
       padding: 10px 20px;
-      border-radius: 8px;
-      color: #000;
+      animation: slideIn 2s ease-out;
+      max-width: 100%;
+      word-wrap: break-word;
+    }
+
+    @keyframes slideIn {
+      0% { transform: translateX(-120%); opacity: 0; }
+      60% { transform: translateX(5%); opacity: 1; }
+      100% { transform: translateX(0); }
+    }
+
+    .author {
+      font-size: 1.2em;
+      margin-top: 15px;
+      color: #facc15;
+      font-weight: bold;
+      text-shadow: 1px 1px 2px #000;
+    }
+
+    /* ===== CONTENT ===== */
+    .container {
+      max-width: 1000px;
+      margin: 50px auto;
+      background: #fff;
       border: 3px solid #000;
-      box-shadow: 5px 5px 0 #000;
-      font-size: 1.5em;
-    }
-    p {
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 6px 6px 0 #facc15;
       line-height: 1.8;
+    }
+
+    h2 {
+      background: #facc15;
+      color: #000;
+      border: 2px solid #000;
+      border-radius: 6px;
+      padding: 8px 14px;
+      display: inline-block;
+      margin-bottom: 15px;
+      font-size: 1.4em;
+    }
+
+    p {
+      margin-bottom: 20px;
+      text-align: justify;
       font-size: 1.1em;
-      margin: 15px;
     }
-    .demo-img {
-      width: 80%;
-      border: 5px solid #000;
+
+    ul {
+      margin: 15px 0 25px 30px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    img {
+      width: 100%;
+      border: 3px solid #000;
       border-radius: 10px;
-      box-shadow: 5px 5px 0 #ffcc00;
-      margin: 20px auto;
-      display: block;
+      box-shadow: 5px 5px 0 #facc15;
+      margin: 25px 0;
+      transition: transform 0.4s ease;
     }
+
+    img:hover {
+      transform: scale(1.05);
+    }
+
+    /* ===== VIDEO ===== */
+    .video-section {
+      text-align: center;
+      margin-top: 40px;
+    }
+
     iframe {
-      width: 80%;
-      height: 315px;
-      border: 5px solid #000;
+      width: 100%;
+      max-width: 800px;
+      height: 450px;
+      border: 4px solid #000;
       border-radius: 10px;
-      box-shadow: 5px 5px 0 #ffcc00;
+      box-shadow: 6px 6px 0 #facc15;
     }
+
+    /* ===== FLOATING EYES ===== */
     .eyes {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
-      display: flex;
-      gap: 10px;
-      z-index: 100;
-    }
-    .eye {
-      width: 35px;
+      bottom: 25px;
+      right: 25px;
+      width: 70px;
       height: 35px;
-      background: white;
-      border: 3px solid black;
+      display: flex;
+      justify-content: space-between;
+      z-index: 999;
+    }
+
+    .eye {
+      width: 28px;
+      height: 28px;
+      background: #fff;
+      border: 3px solid #000;
       border-radius: 50%;
       position: relative;
+      overflow: hidden;
     }
+
     .pupil {
-      width: 12px;
-      height: 12px;
-      background: black;
-      border-radius: 50%;
       position: absolute;
-      top: 10px;
-      left: 10px;
-      transition: all 0.1s ease;
+      top: 9px;
+      left: 9px;
+      width: 10px;
+      height: 10px;
+      background: #000;
+      border-radius: 50%;
+      transition: transform 0.2s ease;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      background: #facc15;
+      color: #000;
+      padding: 20px;
+      font-weight: 700;
+      border-top: 4px solid #000;
+      letter-spacing: 1px;
+      margin-top: 40px;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
   </style>
 </head>
+
 <body>
-  <header>Presented by RB ⚙️ Windows Automation</header>
+  <header>
+    <div class="title">Windows Automation</div>
+    <p class="author">Presented by Rb</p>
+  </header>
 
   <div class="container">
-    <h2>What is Windows Automation?</h2>
+    <h2>About the Project</h2>
     <p>
-      Windows Automation is the art of making your computer perform tasks automatically — without manual clicking or typing.  
-      Using Python’s <strong>PyAutoGUI</strong> library, we can simulate mouse movements, keyboard actions, and even take screenshots to automate any app or workflow.
+      <strong>Windows Automation by Rb</strong> demonstrates how <strong>Python’s PyAutoGUI</strong> can bring the power of 
+      automation to your desktop. With it, you can control your mouse, keyboard, and even detect screen elements — all
+      through simple Python scripts. This project shows how automation is not just a convenience but a creative way to
+      make your PC work for you.
     </p>
 
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/PyAutoGUI_logo.png/320px-PyAutoGUI_logo.png" 
-         alt="PyAutoGUI Demo" class="demo-img">
+    <img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM.png" alt="Python Logo">
 
-    <h2>🎬 PyAutoGUI in Action</h2>
+    <h2>What is PyAutoGUI?</h2>
     <p>
-      Here’s a short demo video showcasing how PyAutoGUI automates clicks, typing, and navigation on Windows:
+      <strong>PyAutoGUI</strong> is a cross-platform library that lets Python take control of your computer. From automating 
+      clicks and typing to capturing screenshots and detecting images on screen, PyAutoGUI empowers developers, testers, 
+      and enthusiasts to automate almost any GUI operation.
     </p>
 
-    <iframe 
-      src="https://www.youtube.com/embed/O6P86uwfdR0" 
-      title="PyAutoGUI Demo Video" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-      allowfullscreen>
-    </iframe>
+    <img src="https://raw.githubusercontent.com/asweigart/pyautogui/main/docs/screenshots/mouseMoveExample.gif" alt="PyAutoGUI Demo">
 
-    <h2>💡 Why Use Automation?</h2>
+    <div class="video-section">
+      <h2>🎥 PyAutoGUI in Action</h2>
+      <p>Watch this demo to see PyAutoGUI automate clicks, movements, and typing on Windows:</p>
+      <iframe src="https://www.youtube.com/embed/O6P86uwfdR0" 
+              title="PyAutoGUI Windows Automation Demo"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+      </iframe>
+    </div>
+
+    <h2>Why Use Automation?</h2>
     <p>
-      Automation saves time and eliminates repetitive work.  
-      Imagine filling forms, renaming hundreds of files, or running test cases — all done automatically!  
-      PyAutoGUI helps developers, testers, and engineers focus on creativity while it handles the routine.
+      Automation reduces manual effort and saves countless hours. It’s perfect for repetitive work, testing, or handling 
+      operations that require precision. With PyAutoGUI, tasks like report generation, form filling, and file operations
+      can be performed hands-free.
     </p>
 
-    <h2>🚀 Key Features of PyAutoGUI</h2>
-    <p>
-      ✅ Move and control the mouse with precision<br>
-      ✅ Type, copy, and paste text automatically<br>
-      ✅ Capture and analyze screenshots for GUI testing<br>
-      ✅ Automate repetitive admin or testing tasks<br>
-      ✅ Build end-to-end desktop automation scripts easily
-    </p>
+    <ul>
+      <li>Boost productivity with automatic workflows</li>
+      <li>Perform GUI testing faster and smarter</li>
+      <li>Eliminate repetitive human input</li>
+      <li>Combine AI with automation for intelligent behavior</li>
+    </ul>
 
-    <h2>📘 Learn More</h2>
+    <h2>Future Vision</h2>
     <p>
-      PyAutoGUI works cross-platform on Windows, macOS, and Linux.  
-      With just a few lines of Python code, you can create powerful automation scripts  
-      that replicate human behavior — perfect for testing, administration, or daily productivity.
+      This project will continue to evolve — integrating AI vision, image detection, and even chat-driven desktop control.
+      Imagine a desktop assistant that learns your habits and automates your daily computer routine seamlessly.
     </p>
-
-    <p><strong>Stay tuned!</strong> More tutorials, videos, and advanced demos will be added soon.</p>
   </div>
 
+  <!-- Floating Eyes -->
   <div class="eyes">
-    <div class="eye"><div class="pupil"></div></div>
-    <div class="eye"><div class="pupil"></div></div>
+    <div class="eye"><div class="pupil" id="leftPupil"></div></div>
+    <div class="eye"><div class="pupil" id="rightPupil"></div></div>
   </div>
+
+  <footer>
+    © 2025 Windows Automation by Rb | Fast ⚙️ Smart 🏎️ Intelligent 👀
+  </footer>
 
   <script>
-    const eyes = document.querySelectorAll('.eye');
+    // Eyes follow scroll direction
+    let lastScroll = 0;
+    const leftPupil = document.getElementById('leftPupil');
+    const rightPupil = document.getElementById('rightPupil');
+
     window.addEventListener('scroll', () => {
-      const scrollTop = window.scrollY;
-      eyes.forEach(eye => {
-        const pupil = eye.querySelector('.pupil');
-        pupil.style.top = 10 + Math.min(scrollTop / 40, 10) + 'px';
-      });
+      const currentScroll = window.scrollY;
+      const direction = currentScroll > lastScroll ? 'down' : 'up';
+      lastScroll = currentScroll;
+
+      const moveY = direction === 'down' ? 4 : -4;
+      leftPupil.style.transform = `translateY(${moveY}px)`;
+      rightPupil.style.transform = `translateY(${moveY}px)`;
     });
   </script>
 </body>
