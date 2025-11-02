@@ -6,7 +6,7 @@
   <title>Windows Automation by Rb</title>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;600&display=swap');
 
     * {
       margin: 0;
@@ -34,13 +34,15 @@
     /* F1 Racer-style Title */
     .title {
       font-family: 'Orbitron', sans-serif;
-      font-size: clamp(2em, 6vw, 3em);
+      font-weight: 700;
+      font-size: clamp(2.5em, 6vw, 3.5em);
       color: #facc15;
       text-transform: uppercase;
       letter-spacing: 4px;
-      text-shadow: 0 0 15px #facc15, 0 0 40px #000;
+      text-shadow: 0 0 20px #facc15, 0 0 40px #000;
       border-bottom: 4px solid #facc15;
       display: inline-block;
+      padding: 10px 25px;
       animation: raceIn 2s ease-out;
     }
 
@@ -61,7 +63,7 @@
     }
 
     .author {
-      font-size: 1.2em;
+      font-size: 1.3em;
       margin-top: 20px;
       color: #facc15;
       font-weight: bold;
@@ -121,18 +123,18 @@
     /* ===== FLOATING EYES ===== */
     .eyes {
       position: fixed;
-      bottom: 20px;
+      bottom: 25px;
       right: 25px;
-      width: 100px;
-      height: 50px;
+      width: 70px;
+      height: 35px;
       display: flex;
       justify-content: space-between;
       z-index: 999;
     }
 
     .eye {
-      width: 40px;
-      height: 40px;
+      width: 30px;
+      height: 30px;
       background: #fff;
       border: 3px solid #000;
       border-radius: 50%;
@@ -142,10 +144,10 @@
 
     .pupil {
       position: absolute;
-      top: 12px;
-      left: 12px;
-      width: 12px;
-      height: 12px;
+      top: 9px;
+      left: 9px;
+      width: 10px;
+      height: 10px;
       background: #000;
       border-radius: 50%;
       transition: transform 0.2s ease;
@@ -178,48 +180,55 @@
   <div class="container">
     <h2>About the Project</h2>
     <p>
-      <strong>Windows Automation by Rb</strong> is an advanced initiative designed to showcase how Python’s 
-      <strong>PyAutoGUI</strong> can bring automation to life. It allows you to perform real-time control of your desktop 
-      — simulating keystrokes, clicks, and movements — and turning everyday Windows operations into smart, 
-      self-executing tasks.
+      <strong>Windows Automation by Rb</strong> is a smart project that explores the power of <strong>Python automation</strong> using
+      <strong>PyAutoGUI</strong>. The goal is to simplify and automate routine desktop operations — from opening apps to typing,
+      clicking, and capturing screens — all using code.
     </p>
     <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python Logo">
 
     <h2>What is PyAutoGUI?</h2>
     <p>
-      <strong>PyAutoGUI</strong> is a cross-platform Python module that allows programmatic control of the keyboard and mouse.
-      With PyAutoGUI, you can build scripts that replicate human interactions with any application — like clicking buttons,
-      dragging files, filling out forms, and taking screenshots. It’s an essential tool for automating GUI-based workflows.
+      <strong>PyAutoGUI</strong> is a cross-platform Python module for automating mouse and keyboard control.
+      It’s the easiest way to simulate human interactions on Windows applications — move your mouse, click, type,
+      take screenshots, or even locate buttons by their image on screen.
     </p>
-    <img src="https://raw.githubusercontent.com/asweigart/pyautogui/master/docs/_static/screenshot.png" alt="PyAutoGUI Demo">
+
+    <img src="https://user-images.githubusercontent.com/4635334/87232337-83a81a00-c3b2-11ea-8b03-d2ffb0e4f0da.gif" alt="PyAutoGUI Demo">
 
     <h2>Why Use Automation?</h2>
     <p>
-      In today’s world, time and precision are critical. Repetitive tasks can slow productivity, cause mistakes, and take
-      valuable focus away from creative work. Windows automation helps you:
+      Automation saves time, removes human error, and enables testing or executing tasks faster than ever.
+      Windows automation can be used to:
     </p>
     <ul>
-      <li>Automate desktop testing for faster QA cycles</li>
-      <li>Generate reports, move files, and organize data automatically</li>
-      <li>Perform admin-level tasks without human intervention</li>
-      <li>Build AI-assisted systems that interact with software visually</li>
+      <li>Test applications automatically (GUI automation)</li>
+      <li>Perform daily admin operations with zero manual effort</li>
+      <li>Build custom automation bots for repetitive work</li>
+      <li>Control or monitor systems remotely</li>
     </ul>
 
-    <h2>Advanced Use Cases</h2>
+    <h2>Creative Possibilities</h2>
     <p>
-      Beyond basic automation, PyAutoGUI can be combined with <strong>image recognition</strong> tools (like OpenCV)
-      and AI models to create smart systems that recognize UI components and interact intelligently.
-      This is the future of desktop automation — blending Python logic with vision and control.
+      PyAutoGUI combined with tools like <strong>OpenCV</strong> can detect UI elements visually,  
+      creating bots that “see” and “act.” This opens up creative ways to integrate automation with AI,
+      image processing, and even smart assistance systems.
+    </p>
+
+    <h2>Sample Idea</h2>
+    <p>
+      Imagine your desktop running nightly automation scripts that open your apps, log in, extract reports,
+      send screenshots by email, and shut down — all while you sleep.  
+      That’s the future of Windows automation — effortless and precise.
     </p>
 
     <h2>Future Roadmap</h2>
     <p>
-      🚀 Upcoming enhancements on this site will include:
+      🚀 The upcoming updates to this project will include:
       <ul>
-        <li>Step-by-step tutorials for building your own automation bots</li>
-        <li>Real-world PyAutoGUI project examples</li>
-        <li>Video demos and live code previews</li>
-        <li>Integration of AI-based GUI automation concepts</li>
+        <li>Hands-on examples of PyAutoGUI automation</li>
+        <li>Live code execution previews</li>
+        <li>Integration with AI-powered assistants</li>
+        <li>Video tutorials and step-by-step guides</li>
       </ul>
     </p>
   </div>
@@ -231,7 +240,7 @@
   </div>
 
   <footer>
-    © 2025 Windows Automation by Rb | Fast ⚡ Smart 🏎️ Automated 👀
+    © 2025 Windows Automation by Rb | Precision ⚙️ Speed 🏎️ Intelligence 👀
   </footer>
 
   <script>
@@ -245,7 +254,7 @@
       const direction = currentScroll > lastScroll ? 'down' : 'up';
       lastScroll = currentScroll;
 
-      const moveY = direction === 'down' ? 6 : -6;
+      const moveY = direction === 'down' ? 4 : -4;
       leftPupil.style.transform = `translateY(${moveY}px)`;
       rightPupil.style.transform = `translateY(${moveY}px)`;
     });
