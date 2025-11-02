@@ -8,11 +8,7 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;600&display=swap');
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Poppins', sans-serif;
@@ -21,7 +17,6 @@
       overflow-x: hidden;
     }
 
-    /* ===== HEADER ===== */
     header {
       text-align: center;
       padding: 60px 20px 50px;
@@ -30,7 +25,6 @@
       color: #fff;
     }
 
-    /* Responsive Title (F1 style) */
     .title {
       font-family: 'Orbitron', sans-serif;
       font-weight: 700;
@@ -61,7 +55,6 @@
       text-shadow: 1px 1px 2px #000;
     }
 
-    /* ===== CONTENT ===== */
     .container {
       max-width: 1000px;
       margin: 50px auto;
@@ -84,19 +77,10 @@
       font-size: 1.4em;
     }
 
-    p {
-      margin-bottom: 20px;
-      text-align: justify;
-      font-size: 1.1em;
-    }
+    p { margin-bottom: 20px; text-align: justify; font-size: 1.1em; }
 
-    ul {
-      margin: 15px 0 25px 30px;
-    }
-
-    li {
-      margin-bottom: 10px;
-    }
+    ul { margin: 15px 0 25px 30px; }
+    li { margin-bottom: 10px; }
 
     img {
       width: 100%;
@@ -106,16 +90,9 @@
       margin: 25px 0;
       transition: transform 0.4s ease;
     }
+    img:hover { transform: scale(1.05); }
 
-    img:hover {
-      transform: scale(1.05);
-    }
-
-    /* ===== VIDEO DEMO ===== */
-    .video-section {
-      text-align: center;
-      margin-top: 40px;
-    }
+    .video-section { text-align: center; margin-top: 40px; }
 
     iframe {
       width: 100%;
@@ -126,7 +103,6 @@
       box-shadow: 6px 6px 0 #facc15;
     }
 
-    /* ===== FLOATING EYES ===== */
     .eyes {
       position: fixed;
       bottom: 25px;
@@ -159,7 +135,6 @@
       transition: transform 0.2s ease;
     }
 
-    /* ===== FOOTER ===== */
     footer {
       text-align: center;
       background: #facc15;
@@ -171,9 +146,7 @@
       margin-top: 40px;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
   </style>
 </head>
 
@@ -192,7 +165,9 @@
       way to make your PC work for you.
     </p>
 
-    <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*Ud_rYcRZZXbxnI-UBa3MYA.gif" alt="PyAutoGUI Automation Example">
+    <!-- ✅ Working PyAutoGUI Image -->
+    <img src="https://raw.githubusercontent.com/asweigart/pyautogui/master/docs/_static/mouse_move.png" 
+         alt="PyAutoGUI Mouse Move Example">
 
     <h2>What is PyAutoGUI?</h2>
     <p>
@@ -201,11 +176,13 @@
       and enthusiasts to automate almost any GUI operation.
     </p>
 
-    <img src="https://raw.githubusercontent.com/asweigart/pyautogui/master/docs/_static/pyautogui_screenshot_example.png" alt="PyAutoGUI Screenshot Example">
+    <!-- ✅ Another Image -->
+    <img src="https://raw.githubusercontent.com/asweigart/pyautogui/master/docs/_static/pyautogui_screenshot_example.png" 
+         alt="PyAutoGUI Screenshot Example">
 
     <div class="video-section">
       <h2>🎥 PyAutoGUI in Action</h2>
-      <p>Watch this short demonstration to see how PyAutoGUI automates clicks, movements, and typing on Windows:</p>
+      <p>Watch this demonstration to see how PyAutoGUI automates clicks, movements, and typing on Windows:</p>
       <iframe src="https://www.youtube.com/embed/1RE5tSPO2RI"
               title="PyAutoGUI Windows Automation Demo"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
