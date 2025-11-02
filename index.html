@@ -24,47 +24,38 @@
     /* ===== HEADER ===== */
     header {
       text-align: center;
-      padding: 70px 20px 50px;
+      padding: 60px 20px 50px;
       border-bottom: 6px solid #facc15;
       background: linear-gradient(180deg, #000 0%, #111 40%, #222 100%);
       color: #fff;
-      position: relative;
     }
 
-    /* F1 Racer-style Title */
+    /* Responsive Title (F1 style) */
     .title {
       font-family: 'Orbitron', sans-serif;
       font-weight: 700;
-      font-size: clamp(2.5em, 6vw, 3.5em);
+      font-size: clamp(1.8em, 8vw, 3.5em);
       color: #facc15;
       text-transform: uppercase;
       letter-spacing: 4px;
-      text-shadow: 0 0 20px #facc15, 0 0 40px #000;
+      text-shadow: 0 0 15px #facc15, 0 0 40px #000;
       border-bottom: 4px solid #facc15;
       display: inline-block;
-      padding: 10px 25px;
-      animation: raceIn 2s ease-out;
+      padding: 10px 20px;
+      animation: slideIn 2s ease-out;
+      max-width: 100%;
+      word-wrap: break-word;
     }
 
-    @keyframes raceIn {
-      0% {
-        transform: translateX(-120%);
-        opacity: 0;
-        letter-spacing: 12px;
-      }
-      60% {
-        transform: translateX(5%);
-        opacity: 1;
-      }
-      100% {
-        transform: translateX(0);
-        letter-spacing: 4px;
-      }
+    @keyframes slideIn {
+      0% { transform: translateX(-120%); opacity: 0; }
+      60% { transform: translateX(5%); opacity: 1; }
+      100% { transform: translateX(0); }
     }
 
     .author {
-      font-size: 1.3em;
-      margin-top: 20px;
+      font-size: 1.2em;
+      margin-top: 15px;
       color: #facc15;
       font-weight: bold;
       text-shadow: 1px 1px 2px #000;
@@ -120,6 +111,21 @@
       transform: scale(1.05);
     }
 
+    /* ===== VIDEO DEMO ===== */
+    .video-section {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 800px;
+      height: 450px;
+      border: 4px solid #000;
+      border-radius: 10px;
+      box-shadow: 6px 6px 0 #facc15;
+    }
+
     /* ===== FLOATING EYES ===== */
     .eyes {
       position: fixed;
@@ -133,8 +139,8 @@
     }
 
     .eye {
-      width: 30px;
-      height: 30px;
+      width: 28px;
+      height: 28px;
       background: #fff;
       border: 3px solid #000;
       border-radius: 50%;
@@ -180,56 +186,50 @@
   <div class="container">
     <h2>About the Project</h2>
     <p>
-      <strong>Windows Automation by Rb</strong> is a smart project that explores the power of <strong>Python automation</strong> using
-      <strong>PyAutoGUI</strong>. The goal is to simplify and automate routine desktop operations — from opening apps to typing,
-      clicking, and capturing screens — all using code.
+      <strong>Windows Automation by Rb</strong> demonstrates how <strong>Python’s PyAutoGUI</strong> can bring the power of 
+      automation to your desktop. With it, you can control your mouse, keyboard, and even detect screen elements — all
+      through simple Python scripts. This project aims to show that automation is not just a convenience, but a creative
+      way to make your PC work for you.
     </p>
+
     <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python Logo">
 
     <h2>What is PyAutoGUI?</h2>
     <p>
-      <strong>PyAutoGUI</strong> is a cross-platform Python module for automating mouse and keyboard control.
-      It’s the easiest way to simulate human interactions on Windows applications — move your mouse, click, type,
-      take screenshots, or even locate buttons by their image on screen.
+      <strong>PyAutoGUI</strong> is a cross-platform library that lets Python take control of your computer. From automating 
+      clicks and typing to capturing screenshots and detecting images on screen, PyAutoGUI empowers developers, testers, 
+      and enthusiasts to automate almost any GUI operation.
     </p>
 
     <img src="https://user-images.githubusercontent.com/4635334/87232337-83a81a00-c3b2-11ea-8b03-d2ffb0e4f0da.gif" alt="PyAutoGUI Demo">
 
+    <div class="video-section">
+      <h2>🎥 PyAutoGUI in Action</h2>
+      <p>Watch this short demonstration to see how PyAutoGUI automates clicks, movements, and typing on Windows:</p>
+      <iframe src="https://www.youtube.com/embed/1lUByxW4fjE" 
+              title="PyAutoGUI Windows Automation Demo"
+              allowfullscreen>
+      </iframe>
+    </div>
+
     <h2>Why Use Automation?</h2>
     <p>
-      Automation saves time, removes human error, and enables testing or executing tasks faster than ever.
-      Windows automation can be used to:
+      Automation reduces manual effort and saves countless hours. It’s perfect for repetitive work, testing, or handling 
+      operations that require precision. With PyAutoGUI, tasks like report generation, form filling, and file operations
+      can be performed hands-free.
     </p>
+
     <ul>
-      <li>Test applications automatically (GUI automation)</li>
-      <li>Perform daily admin operations with zero manual effort</li>
-      <li>Build custom automation bots for repetitive work</li>
-      <li>Control or monitor systems remotely</li>
+      <li>Boost productivity with automatic workflows</li>
+      <li>Perform GUI testing faster and smarter</li>
+      <li>Eliminate repetitive human input</li>
+      <li>Combine AI with automation for intelligent behavior</li>
     </ul>
 
-    <h2>Creative Possibilities</h2>
+    <h2>Future Vision</h2>
     <p>
-      PyAutoGUI combined with tools like <strong>OpenCV</strong> can detect UI elements visually,  
-      creating bots that “see” and “act.” This opens up creative ways to integrate automation with AI,
-      image processing, and even smart assistance systems.
-    </p>
-
-    <h2>Sample Idea</h2>
-    <p>
-      Imagine your desktop running nightly automation scripts that open your apps, log in, extract reports,
-      send screenshots by email, and shut down — all while you sleep.  
-      That’s the future of Windows automation — effortless and precise.
-    </p>
-
-    <h2>Future Roadmap</h2>
-    <p>
-      🚀 The upcoming updates to this project will include:
-      <ul>
-        <li>Hands-on examples of PyAutoGUI automation</li>
-        <li>Live code execution previews</li>
-        <li>Integration with AI-powered assistants</li>
-        <li>Video tutorials and step-by-step guides</li>
-      </ul>
+      This project will continue to evolve — integrating AI vision, image detection, and even chat-driven desktop control.
+      Imagine a desktop assistant that learns your habits and automates your daily computer routine seamlessly.
     </p>
   </div>
 
@@ -240,7 +240,7 @@
   </div>
 
   <footer>
-    © 2025 Windows Automation by Rb | Precision ⚙️ Speed 🏎️ Intelligence 👀
+    © 2025 Windows Automation by Rb | Fast ⚙️ Smart 🏎️ Intelligent 👀
   </footer>
 
   <script>
