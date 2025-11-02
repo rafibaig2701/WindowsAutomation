@@ -6,56 +6,121 @@
   <title>Rb - Windows Automation</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #1f2937, #111827);
-      color: #f9fafb;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #000;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #facc15;
+      color: #000;
       text-align: center;
-      padding: 40px;
+      padding: 30px 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     }
     h1 {
-      color: #60a5fa;
-    }
-    .container {
-      max-width: 700px;
-      margin: 0 auto;
-      background: #1e293b;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      font-size: 2.5em;
+      margin-bottom: 10px;
     }
     .author {
       font-size: 1.2em;
-      margin-bottom: 10px;
-      color: #93c5fd;
+      color: #111;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #111;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      line-height: 1.8;
+    }
+    h2 {
+      color: #facc15;
+      border-bottom: 2px solid #facc15;
+      display: inline-block;
+      margin-bottom: 15px;
     }
     p {
-      line-height: 1.6;
-      color: #e5e7eb;
+      color: #f3f4f6;
+      font-size: 1.1em;
+    }
+    img {
+      width: 100%;
+      border-radius: 8px;
+      margin: 20px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+    footer {
+      text-align: center;
+      background: #facc15;
+      color: #000;
+      padding: 15px;
+      font-weight: bold;
+    }
+    .highlight {
+      color: #facc15;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <header>
     <h1>Windows Automation ⚙️</h1>
-    <p class="author"><strong>Author:</strong> Rb</p>
+    <p class="author">Created by <span class="highlight">Rb</span></p>
+  </header>
+
+  <div class="container">
+    <h2>About the Project</h2>
     <p>
-      Welcome to my project on <strong>Windows Automation</strong>!  
-      This website demonstrates the concept of automating desktop applications using Python's <strong>PyAutoGUI</strong> library.
+      Welcome to <strong>Windows Automation by Rb</strong> — a space dedicated to exploring how Python’s
+      <span class="highlight">PyAutoGUI</span> library can transform the way we interact with our desktop.
     </p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Python.svg" alt="Python Logo">
+
+    <h2>What is PyAutoGUI?</h2>
     <p>
-      PyAutoGUI allows us to control the mouse and keyboard programmatically,  
-      enabling tasks such as opening applications, clicking buttons, typing text,  
-      taking screenshots, and automating repetitive tasks — all without manual input.
+      <strong>PyAutoGUI</strong> is a powerful cross-platform automation library that allows Python scripts to control
+      the mouse and keyboard. You can use it to click buttons, type text, take screenshots, move the cursor, drag items,
+      and even perform repetitive GUI actions — all without touching your keyboard or mouse manually!
     </p>
+    <img src="https://miro.medium.com/v2/resize:fit:1200/1*zOErZL9BuMqq3O5VHxIZvg.png" alt="PyAutoGUI Example">
+
+    <h2>Why Windows Automation?</h2>
     <p>
-      Automation is especially useful for improving productivity and efficiency  
-      in Windows environments — such as automating test cases for GUI applications,  
-      performing routine admin tasks, or handling multi-step operations automatically.
+      Automating tasks on Windows can save countless hours of manual work. For example:
+      <ul>
+        <li>Automating repetitive GUI test cases for desktop apps.</li>
+        <li>Filling forms or clicking through configuration screens automatically.</li>
+        <li>Capturing screenshots for monitoring or documentation.</li>
+        <li>Launching and interacting with multiple applications without human input.</li>
+      </ul>
     </p>
+
+    <h2>Sample Automation Tasks</h2>
     <p>
-      Stay tuned for tutorials, examples, and insights into how you can use  
-      <strong>PyAutoGUI</strong> to make your desktop automation smarter and faster!
+      Here are a few things you can achieve with PyAutoGUI:
+      <ul>
+        <li>Move the mouse to specific coordinates and perform clicks.</li>
+        <li>Type a paragraph automatically into a Notepad file.</li>
+        <li>Take a screenshot and save it to a folder.</li>
+        <li>Locate on-screen images and interact with them intelligently.</li>
+      </ul>
+    </p>
+    <img src="https://cdn.analyticsvidhya.com/wp-content/uploads/2021/05/pyautogui_image1.png" alt="Automation Demo">
+
+    <h2>Future Plans</h2>
+    <p>
+      This website will soon include real Python scripts, step-by-step tutorials, and live demonstrations of
+      <span class="highlight">PyAutoGUI</span> in action — showing how automation can make Windows tasks faster,
+      smarter, and effortless.
     </p>
   </div>
+
+  <footer>
+    © 2025 Windows Automation by Rb | Built with ❤️ using HTML & CSS
+  </footer>
 </body>
 </html>
