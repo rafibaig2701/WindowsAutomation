@@ -16,7 +16,7 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #ffffff;
+      background-color: #fff;
       color: #000;
       overflow-x: hidden;
     }
@@ -118,54 +118,38 @@
       transform: scale(1.05);
     }
 
-    /* ===== CAT WATCHING ===== */
-    .cat {
+    /* ===== FLOATING EYES ===== */
+    .eyes {
       position: fixed;
-      bottom: 0;
-      right: 15px;
-      width: 140px;
-      height: 120px;
-      z-index: 999;
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-    }
-
-    .cat-body {
-      position: relative;
+      bottom: 20px;
+      right: 25px;
       width: 100px;
-      height: 100px;
-      background: #facc15;
-      border: 3px solid #000;
-      border-radius: 50% 50% 20% 20%;
-      box-shadow: 3px 3px 0 #000;
+      height: 50px;
+      display: flex;
+      justify-content: space-between;
+      z-index: 999;
     }
 
     .eye {
-      position: absolute;
-      top: 35%;
-      width: 25px;
-      height: 25px;
+      width: 40px;
+      height: 40px;
       background: #fff;
-      border: 2px solid #000;
+      border: 3px solid #000;
       border-radius: 50%;
+      position: relative;
       overflow: hidden;
     }
 
-    .eye::after {
-      content: '';
+    .pupil {
       position: absolute;
-      top: 8px;
-      left: 8px;
-      width: 8px;
-      height: 8px;
+      top: 12px;
+      left: 12px;
+      width: 12px;
+      height: 12px;
       background: #000;
       border-radius: 50%;
-      transition: transform 0.2s;
+      transition: transform 0.2s ease;
     }
-
-    .eye.left { left: 18px; }
-    .eye.right { right: 18px; }
 
     /* ===== FOOTER ===== */
     footer {
@@ -194,93 +178,76 @@
   <div class="container">
     <h2>About the Project</h2>
     <p>
-      <strong>Windows Automation by Rb</strong> is an innovative project that leverages Python’s <strong>PyAutoGUI</strong> library
-      to automate desktop applications on Windows. It demonstrates how code can interact with a user interface — moving
-      the mouse, typing, clicking buttons, and taking screenshots — just like a human would, but faster and more precisely.
+      <strong>Windows Automation by Rb</strong> is an advanced initiative designed to showcase how Python’s 
+      <strong>PyAutoGUI</strong> can bring automation to life. It allows you to perform real-time control of your desktop 
+      — simulating keystrokes, clicks, and movements — and turning everyday Windows operations into smart, 
+      self-executing tasks.
     </p>
     <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python Logo">
 
-    <h2>Why Automate?</h2>
+    <h2>What is PyAutoGUI?</h2>
     <p>
-      Automation helps eliminate repetitive tasks and errors. It enhances productivity by letting computers handle what’s routine.
-      PyAutoGUI lets you control GUI elements with code, enabling:
+      <strong>PyAutoGUI</strong> is a cross-platform Python module that allows programmatic control of the keyboard and mouse.
+      With PyAutoGUI, you can build scripts that replicate human interactions with any application — like clicking buttons,
+      dragging files, filling out forms, and taking screenshots. It’s an essential tool for automating GUI-based workflows.
+    </p>
+    <img src="https://raw.githubusercontent.com/asweigart/pyautogui/master/docs/_static/screenshot.png" alt="PyAutoGUI Demo">
+
+    <h2>Why Use Automation?</h2>
+    <p>
+      In today’s world, time and precision are critical. Repetitive tasks can slow productivity, cause mistakes, and take
+      valuable focus away from creative work. Windows automation helps you:
     </p>
     <ul>
-      <li>Automating repetitive desktop operations</li>
-      <li>Performing GUI testing without manual effort</li>
-      <li>Taking screenshots for verification</li>
-      <li>Controlling Windows applications automatically</li>
+      <li>Automate desktop testing for faster QA cycles</li>
+      <li>Generate reports, move files, and organize data automatically</li>
+      <li>Perform admin-level tasks without human intervention</li>
+      <li>Build AI-assisted systems that interact with software visually</li>
     </ul>
-    <img src="https://cdn.analyticsvidhya.com/wp-content/uploads/2021/05/pyautogui_image1.png" alt="PyAutoGUI Example">
 
-    <h2>How PyAutoGUI Works</h2>
+    <h2>Advanced Use Cases</h2>
     <p>
-      PyAutoGUI provides methods like <code>moveTo()</code>, <code>click()</code>, <code>typewrite()</code>, and
-      <code>screenshot()</code> to mimic human actions. These tools help you automate GUI interactions and create
-      efficient, reliable workflows for testing or daily use.
+      Beyond basic automation, PyAutoGUI can be combined with <strong>image recognition</strong> tools (like OpenCV)
+      and AI models to create smart systems that recognize UI components and interact intelligently.
+      This is the future of desktop automation — blending Python logic with vision and control.
     </p>
 
-    <h2>Creative Vision</h2>
+    <h2>Future Roadmap</h2>
     <p>
-      This project will soon feature real-world examples, tutorials, and videos that showcase desktop automation in action.
-      The goal is to make Windows automation simple, engaging, and accessible to everyone.
+      🚀 Upcoming enhancements on this site will include:
+      <ul>
+        <li>Step-by-step tutorials for building your own automation bots</li>
+        <li>Real-world PyAutoGUI project examples</li>
+        <li>Video demos and live code previews</li>
+        <li>Integration of AI-based GUI automation concepts</li>
+      </ul>
     </p>
   </div>
 
-  <!-- Animated Cat Watching -->
-  <div class="cat">
-    <div class="cat-body">
-      <div class="eye left"></div>
-      <div class="eye right"></div>
-    </div>
+  <!-- Floating Eyes -->
+  <div class="eyes">
+    <div class="eye"><div class="pupil" id="leftPupil"></div></div>
+    <div class="eye"><div class="pupil" id="rightPupil"></div></div>
   </div>
 
   <footer>
-    © 2025 Windows Automation by Rb | Fast ⚡ Smart 🏎️ Creative 🐱
+    © 2025 Windows Automation by Rb | Fast ⚡ Smart 🏎️ Automated 👀
   </footer>
 
   <script>
-    // Cat eyes move up/down depending on scroll direction
+    // Eyes follow scroll direction
     let lastScroll = 0;
-    const eyes = document.querySelectorAll('.eye::after'); // Not directly selectable, so:
-    const leftEye = document.querySelector('.eye.left');
-    const rightEye = document.querySelector('.eye.right');
+    const leftPupil = document.getElementById('leftPupil');
+    const rightPupil = document.getElementById('rightPupil');
 
     window.addEventListener('scroll', () => {
       const currentScroll = window.scrollY;
-      const movingUp = currentScroll < lastScroll;
-
-      document.querySelectorAll('.eye').forEach(eye => {
-        const pupil = eye.querySelector('::after'); // Not accessible, workaround:
-      });
-
-      const pupils = document.querySelectorAll('.eye');
-      pupils.forEach(eye => {
-        const pupilDot = eye.querySelector('div');
-      });
-
-      const eyesPupil = document.querySelectorAll('.eye::after');
+      const direction = currentScroll > lastScroll ? 'down' : 'up';
       lastScroll = currentScroll;
-    });
 
-    // Real JS method for eye pupils:
-    const left = document.querySelector('.eye.left');
-    const right = document.querySelector('.eye.right');
-    let scrollPos = window.scrollY;
-
-    window.addEventListener('scroll', () => {
-      const newPos = window.scrollY;
-      const direction = newPos > scrollPos ? 'down' : 'up';
-      scrollPos = newPos;
-
-      const move = direction === 'down' ? 6 : -6;
-
-      document.querySelectorAll('.eye').forEach(eye => {
-        const pupil = eye.querySelector('::after');
-      });
-
-      // Move pupils manually
-      document.styleSheets[0].addRule('.eye::after', `transform: translateY(${move}px);`);
+      const moveY = direction === 'down' ? 6 : -6;
+      leftPupil.style.transform = `translateY(${moveY}px)`;
+      rightPupil.style.transform = `translateY(${moveY}px)`;
     });
   </script>
 </body>
